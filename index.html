@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <script src=" https://unpkg.com/leaflet@1.6.0/dist/leaflet.js "></script>
+    <link rel="stylesheet" href=" https://unpkg.com/leaflet@1.6.0/dist/leaflet.css" />
+    <style>
+        #map {
+            width: 100%;
+            height: 580px;
+            box-shadow: 5px 5px 5px #888;
+        }
+    </style>
+</head>
+
+<body>
+    <div id='map'>
+        <script>
+
+            var OSM = L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+                attribution: '&copy; <a href="http://osm.org/copyright">OpenStreetMap</a>'
+                    + 'contributors',
+                maxZoom: 20
+            });
+
+            var map = L.map('map', {
+                center: [1.61389, -75.6128],
+                layers: OSM,
+                zoom: 14,
+            });
+
+            L.control.scale()
+                .addTo(map);
+
+            var marker = L.marker([1.6210752642342514, -75.60456635853947], {
+                draggable: true,
+
+            }).addTo(map)
+                .bindPopup('Universidad de la amazonìa')
+                .openPopup();
+
+
+            var marker = L.marker([1.615331253743978, -75.6138229306815], {
+                draggable: true,
+                title: 'pincha aquí'
+            }).addTo(map)
+                .bindPopup('Alcaldia de Florencia Caquetà')
+                .openPopup();
+
+            var circle = L.circle([1.615331253743978, -75.6138229306815], 500, {
+                color: 'orange',
+                fillColor: '#EF7F1A',
+                fillOpacity: 0.5
+            }).addTo(map);
+
+            var polygon = L.polygon([
+                [1.614490465945747, -75.613517246341263],
+                [1.6146933224456093, -75.61279653529026],
+                [1.615422340971088, -75.61301336722735],
+                [1.6151848026007005, -75.61373344241194]
+            ]).addTo(map)
+                .bindPopup('Plaza Santander')
+
+            var pointA = new L.LatLng(1.6226228001538323, -75.6117086206944);
+            var pointB = new L.LatLng(1.6201732820070214, -75.60423470239783);
+            var latlngs = [pointA, pointB];
+            var polyline = L.polyline(
+                latlngs, { color: 'orange' }
+            )
+                .addTo(map)
+                .bindPopup('Ruta Casa-Universidad');
+
+
+
+
+
+
+
+        </script>
+
+    </div>
+</body>
+
+</html>
