@@ -32,7 +32,7 @@
             L.control.scale()
                 .addTo(map);
 
-            var marker = L.marker([1.6210752642342514, -75.60456635853947], {
+            var marker = L.marker([1.6201126407631194, -75.60524730035894], {
                 draggable: true,
 
             }).addTo(map)
@@ -40,7 +40,7 @@
                 .openPopup();
 
 
-            var marker = L.marker([1.615331253743978, -75.6138229306815], {
+            var marker = L.marker([1.6150597868382934, -75.61384628563756], {
                 draggable: true,
                 title: 'pincha aquí'
             }).addTo(map)
@@ -61,11 +61,20 @@
             ]).addTo(map)
                 .bindPopup('Plaza Santander')
 
-            var pointA = new L.LatLng(1.6226228001538323, -75.6117086206944);
-            var pointB = new L.LatLng(1.6201732820070214, -75.60423470239783);
-            var latlngs = [pointA, pointB];
+            var pointA = new L.LatLng(1.622631437969514, -75.61172787098536);
+            var pointB = new L.LatLng(1.622709442174083, -75.61100451330519);
+            var pointC = new L.LatLng(1.6207410043104071, -75.61031930872343);
+            var pointD = new L.LatLng(1.620395337049039, -75.61000314043221);
+            var pointE = new L.LatLng(1.6204000766733186, -75.60974899495632);
+            var pointF = new L.LatLng(1.6194911855414345, -75.60711326106423);
+            var pointG = new L.LatLng(1.6188451957876706, -75.60647386753777);
+            var pointH = new L.LatLng(1.6201126407631194, -75.60524730035894);
+
+            var latlngs = [pointA, pointB, pointC, pointD, pointE, pointF, pointG, pointH];
             var polyline = L.polyline(
-                latlngs, { color: 'orange' }
+                latlngs, { color: 'green' }
+
+
             )
                 .addTo(map)
                 .bindPopup('Ruta Casa-Universidad');
